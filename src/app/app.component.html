@@ -1,9 +1,9 @@
+<app-navbar [showSideBar]="showHideSideBar" (showSideBarChange)="onShowSideBarChange($event)"></app-navbar>
 <div class="row body">
   <div class="col-2" *ngIf="showHideSideBar">
     <app-sidebar></app-sidebar>
   </div>
   <div class="col-10">
-    <app-navbar [showSideBar]="showHideSideBar" (showSideBarChange)="onShowSideBarChange($event)"></app-navbar>
     <app-content></app-content>
   </div>
 
