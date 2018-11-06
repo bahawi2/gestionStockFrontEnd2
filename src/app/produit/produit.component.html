@@ -57,10 +57,10 @@
               <input id="quantite" class="col-sm-8" formControlName="quantite" type="number" [(ngModel)]="selectedproduit.quantite">
             </div>
             <div class="form-group row">
-              <label for="prix" class="col-4  col-form-label">prix Unitaire</label>
-             <input class="form-control" formControlName="prix"  type="number" [(ngModel)]="selectedproduit.prix"/>
-              
+              <label for="prix" class="col-4 col-form-label">prix Unitaire</label>
+              <input id="prix" class="col-sm-8" formControlName="prix" type="number" [(ngModel)]="selectedproduit.prix">
             </div>
+            
 
             <button class="btn btn-success" type="button" [disabled]="produitform.pristine || produitform.invalid"
               (click)=" operation == 'add' ? addProduit() :
