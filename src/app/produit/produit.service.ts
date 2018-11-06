@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { Produit } from '../shared/produit';
 
 @Injectable()
-export class ProduitService {
+export class ProduitService2 {
 
     PRODUITS: Produit[]=[];
   constructor() { 
