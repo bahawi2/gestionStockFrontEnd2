@@ -1,18 +1,26 @@
 <div>
+
   <nav class="navbar  navbar-expand-sm navbar-dark bg-dark">
     <a href="" data-toggle="collapse" (click)="afficherSideBar()"><i class="fa fa-bars" aria-hidden="true"></i></a>
-    
+
     <i class="glyphicon glyphicon-search"></i>
-    <ul class="navbar-nav">
-      <li class="nav-item">
-        <a class="nav-link" href="#">Link 1</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">Link 2</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">Link 3</a>
-      </li>
-    </ul>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link" href="#">Link 1</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Link 2</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Link 3</a>
+        </li>
+      </ul>
+    </div>
+    <div class="pull-right">
+      <button class="btn btn-outline-danger my-2 my-sm-0" (click)="logout()">Log Out</button>
+    </div>
   </nav>
+
+
 </div>

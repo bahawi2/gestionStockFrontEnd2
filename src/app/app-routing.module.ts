@@ -3,22 +3,38 @@ import { Routes, RouterModule } from '@angular/router';
 import { ProduitComponent } from './produit/produit.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { ProduitResolver } from './produit/produit.resolver';
+import { HomeComponent } from './home/home.component';
+import { LoginComponent } from './login/login.component';
 
 export const appRoutes: Routes = [
+
   {
-    path: 'produit',
-    component: ProduitComponent,
-    resolve:{
-      produits:ProduitResolver
-    }
+    path: 'home',
+    component: HomeComponent,
+    children: [
+      {
+        path: 'dashboard',
+        component: DashboardComponent,
+        outlet:'contentOutlet'
+      },
+      {
+        path: 'produit',
+        component: ProduitComponent,
+        resolve: {
+          produits: ProduitResolver
+        },
+        outlet:'contentOutlet'
+      }
+    ]
   },
   {
-    path: 'dashboard',
-    component: DashboardComponent,
+    path: 'login',
+    component: LoginComponent,
   },
+
   {
     path: '',
-    redirectTo: '/dashboard',
+    redirectTo: '/home',
     pathMatch: 'full'
   }
 ];
@@ -27,7 +43,7 @@ export const appRoutes: Routes = [
   imports: [
     RouterModule.forRoot(
       appRoutes,
-      {enableTracing: false}
+      { enableTracing: false }
     )
   ],
   exports: [RouterModule],

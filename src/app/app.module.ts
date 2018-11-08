@@ -13,6 +13,9 @@ import { AppRoutingModule } from './app-routing.module';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule, HTTP_INTERCEPTORS, HttpResponse } from '@angular/common/http';
 import { ProductService } from './produit/product.service';
+import { LoginComponent } from './login/login.component';
+import { HomeComponent } from './home/home.component';
+import { AppService } from './app.service';
 
 
 @NgModule({
@@ -22,7 +25,9 @@ import { ProductService } from './produit/product.service';
     NavbarComponent,
     SidebarComponent,
     ContentComponent,
-    DashboardComponent
+    DashboardComponent,
+    LoginComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
@@ -30,7 +35,7 @@ import { ProductService } from './produit/product.service';
     ReactiveFormsModule,
     HttpClientModule
   ],
-  providers: [ProduitService2,ProductService],
+  providers: [ProduitService2,ProductService,AppService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
