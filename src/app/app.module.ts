@@ -18,6 +18,8 @@ import { HomeComponent } from './home/home.component';
 import { AppService } from './app.service';
 import { XhrInterceptor } from './xhr.interceptor';
 import { UserComponent } from './user/user.component';
+import { StoreModule } from '@ngrx/store';
+import { Principalreducer } from './shared/user.principal';
 
 
 @NgModule({
@@ -36,7 +38,8 @@ import { UserComponent } from './user/user.component';
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    StoreModule.forRoot({principal: Principalreducer})
   ],
   providers: [ProduitService2,ProductService,AppService,CookieService,
     {provide:HTTP_INTERCEPTORS,useClass:XhrInterceptor,multi:true}
