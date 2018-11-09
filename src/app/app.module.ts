@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
+import { CookieService } from 'ngx-cookie-service';
 
 import { AppComponent } from './app.component';
 import { ProduitComponent } from './produit/produit.component';
@@ -16,6 +16,8 @@ import { ProductService } from './produit/product.service';
 import { LoginComponent } from './login/login.component';
 import { HomeComponent } from './home/home.component';
 import { AppService } from './app.service';
+import { XhrInterceptor } from './xhr.interceptor';
+import { UserComponent } from './user/user.component';
 
 
 @NgModule({
@@ -27,7 +29,8 @@ import { AppService } from './app.service';
     ContentComponent,
     DashboardComponent,
     LoginComponent,
-    HomeComponent
+    HomeComponent,
+    UserComponent
   ],
   imports: [
     BrowserModule,
@@ -35,7 +38,9 @@ import { AppService } from './app.service';
     ReactiveFormsModule,
     HttpClientModule
   ],
-  providers: [ProduitService2,ProductService,AppService],
+  providers: [ProduitService2,ProductService,AppService,CookieService,
+    {provide:HTTP_INTERCEPTORS,useClass:XhrInterceptor,multi:true}
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
