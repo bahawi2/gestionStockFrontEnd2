@@ -16,9 +16,28 @@ export class SidebarComponent implements OnInit {
 
   ngOnInit() {
     this.store.select('principal').subscribe(principal => {
-      this.principal = principal;
-      console.log("principale "+ principal);
+      this.principal = principal;   
     })
+  }
+
+  hasRoleUser(){
+    let hasRole: boolean = false;
+    this.principal.authorities.forEach(item => {
+      if (item.authority === 'ROLE_NORMAL') {
+        hasRole = true;
+      }
+    });
+    return hasRole;
+  }
+
+  hasRoleAdmin(){
+    let hasRole: boolean = false;
+    this.principal.authorities.forEach(item => {
+      if (item.authority === 'ROLE_ADMIN') {
+        hasRole = true;
+      }
+    });
+    return hasRole;
   }
  
 

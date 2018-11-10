@@ -6,7 +6,6 @@ import { CookieService } from 'ngx-cookie-service';
 import { PrincipalState } from './shared/principal.state';
 import { Store } from '@ngrx/store';
 import { SAVE_PRINCIPAL } from './shared/save.principal.action';
-//,import { Store } from '@ngrx/store';
 
 @Injectable()
 export class AppService {

@@ -1,12 +1,5 @@
 
 export class Principal{
-    constructor(){
-    }
+  constructor(public authorities: any){
   }
-  /*
-  ,authorities:any
-        accountNonExpired?: boolean,
-        accountNonLocked?: boolean,
-        credentialsNonExpired?: boolean,
-        enabled?: boolean,
-        username?: string*/
+}

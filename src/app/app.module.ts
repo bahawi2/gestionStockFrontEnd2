@@ -19,7 +19,7 @@ import { AppService } from './app.service';
 import { XhrInterceptor } from './xhr.interceptor';
 import { UserComponent } from './user/user.component';
 import { StoreModule } from '@ngrx/store';
-import { Principalreducer } from './shared/user.principal';
+import { principalReducer } from './shared/principal.reducer';
 
 
 @NgModule({
@@ -39,7 +39,7 @@ import { Principalreducer } from './shared/user.principal';
     AppRoutingModule,
     ReactiveFormsModule,
     HttpClientModule,
-    StoreModule.forRoot({principal: Principalreducer})
+    StoreModule.forRoot({principal: principalReducer})
   ],
   providers: [ProduitService2,ProductService,AppService,CookieService,
     {provide:HTTP_INTERCEPTORS,useClass:XhrInterceptor,multi:true}

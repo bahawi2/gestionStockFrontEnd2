@@ -1,5 +1,6 @@
-import { Principal } from "./principal.model";
+
+import { Principal } from './principal.model';
 
 export interface PrincipalState{
-    readonly principal: Principal;
-  }
+  readonly principal: Principal;
+}
