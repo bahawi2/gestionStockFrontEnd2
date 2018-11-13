@@ -4,7 +4,6 @@ import { CookieService } from 'ngx-cookie-service';
 
 import { AppComponent } from './app.component';
 import { ProduitComponent } from './produit/produit.component';
-import { ProduitService2 } from './produit/produit.service';
 import { NavbarComponent } from './navbar/navbar.component';
 import { SidebarComponent } from './sidebar/sidebar.component';
 import { ContentComponent } from './content/content.component';
@@ -20,6 +19,11 @@ import { XhrInterceptor } from './xhr.interceptor';
 import { UserComponent } from './user/user.component';
 import { StoreModule } from '@ngrx/store';
 import { principalReducer } from './shared/principal.reducer';
+import { CrudComponent } from './shared/crud/crud.component';
+import { SampleComponent } from './shared/crud/sample/sample.component';
+import { UploadComponent } from './shared/crud/upload/upload.component';
+import { UserService } from './user/user.service';
+
 
 
 @NgModule({
@@ -32,7 +36,10 @@ import { principalReducer } from './shared/principal.reducer';
     DashboardComponent,
     LoginComponent,
     HomeComponent,
-    UserComponent
+    UserComponent,
+    CrudComponent,
+    SampleComponent,
+    UploadComponent
   ],
   imports: [
     BrowserModule,
@@ -41,7 +48,7 @@ import { principalReducer } from './shared/principal.reducer';
     HttpClientModule,
     StoreModule.forRoot({principal: principalReducer})
   ],
-  providers: [ProduitService2,ProductService,AppService,CookieService,
+  providers: [ProductService,AppService,CookieService,UserService,
     {provide:HTTP_INTERCEPTORS,useClass:XhrInterceptor,multi:true}
   ],
   bootstrap: [AppComponent]

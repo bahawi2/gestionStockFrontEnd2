@@ -1,14 +1,14 @@
-<ul class="nav flex-column" style="background-color: #e3f2fd;">
-  <li class="nav-item">
-    <a class="nav-link " *ngIf="hasRoleAdmin()"[routerLink]="[{outlets: { contentOutlet: 'dashboard'}}]" routerLinkActive="active">Dashboard</a>
+<ul class="nav flex-column text-white" style="background-color: 	#ff9248;color:white;Font-Weight: Bold; ">
+  <li class="nav-item text-white">
+    <a class="nav-link text-white" style="background-color: 	#ff9248;color:white; " *ngIf="hasRoleAdmin()"[routerLink]="[{outlets: { contentOutlet: 'dashboard'}}]" routerLinkActive="active">Dashboard</a>
   </li>
   <li class="nav-item">
-    <a class="nav-link" *ngIf="hasRoleUser()" [routerLink]="[{outlets: { contentOutlet: 'produit'}}]" routerLinkActive="active">Produits</a>
+    <a class="nav-link text-white" style="background-color: 	#ff9248;color:white; " *ngIf="hasRoleUser()" [routerLink]="[{outlets: { contentOutlet: 'produit'}}]" routerLinkActive="active">Produits</a>
   </li>
   <li class="nav-item">
-    <a class="nav-link" *ngIf="hasRoleAdmin()" [routerLink]="[{outlets: { contentOutlet: 'user'}}]" routerLinkActive="active">Utilisateurs</a>
+    <a class="nav-link text-white" style="background-color: 	#ff9248;color:white; " *ngIf="hasRoleAdmin()" [routerLink]="[{outlets: { contentOutlet: 'user'}}]" routerLinkActive="active">Utilisateurs</a>
   </li>
-  <li class="nav-item">
+  <li class="nav-item text-white" style="background-color: 	#ff9248;color:white; ">
     <a class="nav-link disabled" href="#">Disabled</a>
   </li>
 </ul>
